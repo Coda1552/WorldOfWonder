@@ -74,10 +74,10 @@ public class WonderBlocks {
                 .addItemsBefore(of(Blocks.MUSHROOM_STEM), STEM_LOG)
                 .addItemsAfter(of(Blocks.AZALEA_LEAVES), DANDELION_PETALS, DANDELION_FLUFF)
                 .tab(WonderTabs.ITEM_GROUP.getKey())
-                        .addItems(STEM_PLANKS, STEM_LOG, STRIPPED_STEM_LOG, STEM_WOOD, STRIPPED_STEM_WOOD,
+                        .addItems(DANDE_LION_SPROUT, STEM_PLANKS, STEM_LOG, STRIPPED_STEM_LOG, STEM_WOOD, STRIPPED_STEM_WOOD,
                                 STEM_STAIRS, STEM_SLAB, STEM_FENCE, STEM_FENCE_GATE, STEM_DOOR, STEM_TRAPDOOR,
-                                STEM_PRESSURE_PLATE, STEM_BUTTON, DANDELION_PETALS, DANDELION_FLUFF,
-                                STEM_SIGNS.getFirst(), STEM_HANGING_SIGNS.getFirst())
+                                STEM_PRESSURE_PLATE, STEM_BUTTON, STEM_SIGNS.getFirst(), STEM_HANGING_SIGNS.getFirst(),
+                                DANDELION_PETALS, DANDELION_FLUFF, MELLOW_PETALS)
                 .tab(FUNCTIONAL_BLOCKS)
                 .addItems(STEM_LADDER, STEM_CHEST)
                 .tab(REDSTONE_BLOCKS)

@@ -25,7 +25,7 @@ public class DandelionFoliagePlacer extends FoliagePlacer {
 
 	@Override
 	protected void createFoliage(LevelSimulatedReader level, FoliageSetter blockSetter, RandomSource random, TreeConfiguration config, int maxTreeHeight, FoliageAttachment attachment, int foliageHeight, int foliageRadius, int offset) {
-		for (int i = 0; i < 4; i++) {
+		for (int i = 0; i < 3; i++) {
 			placeLeavesRow(level, blockSetter, random, config, attachment.pos(), 3, i, attachment.doubleTrunk());
 		}
 	}
@@ -40,22 +40,22 @@ public class DandelionFoliagePlacer extends FoliagePlacer {
 		boolean skip = true;
 		int distance = localX * localX + localZ * localZ;
 		switch (localY) {
-		case 0, 2 -> {
-			skip = distance > 4;
-		}
-		case 1 -> {
-			int distanceX = Math.abs(localX);
-			int distanceZ = Math.abs(localZ);
-			skip = distance > 9;
-			if (distanceX == 2 && distanceZ == 2) skip = true;
-		}
-		case 3 -> {
-			if (localX == 0 && localZ == 0) {
-				skip = false;
-				break;
+			case 0, 2 -> {
+				skip = distance > 4;
 			}
-			skip = DandelionFluffFoliagePlacer.isNotCenterEdge(localX, localZ, 1);
-		}
+			case 1 -> {
+				int distanceX = Math.abs(localX);
+				int distanceZ = Math.abs(localZ);
+				skip = distance > 9;
+				if (distanceX == 3 && distanceZ == 3) skip = true;
+			}
+			case 3 -> {
+				if (localX == 0 && localZ == 0) {
+					skip = false;
+					break;
+				}
+				skip = DandelionFluffFoliagePlacer.isNotCenterEdge(localX, localZ, 1);
+			}
 		}
 		//		if (!skip && potentialDecay) {
 		//			skip = random.nextInt(6) == 0;

@@ -25,5 +25,6 @@ public class WonderGeneration {
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WonderFeatures.WonderPlacedFeatures.PLACED_DANDELION_FLUFF);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WonderFeatures.WonderPlacedFeatures.PLACED_DANDELION);
         builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WonderFeatures.WonderPlacedFeatures.PLACED_MELLOW_PETALS);
+        builder.addFeature(GenerationStep.Decoration.VEGETAL_DECORATION, WonderFeatures.WonderPlacedFeatures.PLACED_LILAC);
     }
 }

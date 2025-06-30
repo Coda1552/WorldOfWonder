@@ -24,7 +24,7 @@ public class WonderItems {
     public static final RegistryObject<Item> BLOOM_MEAL = HELPER.createItem("bloom_meal", () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> MELLOW_PETALS = HELPER.createItem("mellow_petals", () -> new MellowPetalsBlockItem(WonderBlocks.MELLOW_PETALS.get(), new Item.Properties()));
 
-    public static final RegistryObject<ForgeSpawnEggItem> DANDELION_SPAWN_EGG = HELPER.createSpawnEggItem("dande_lion", WonderEntityTypes.DANDE_LION::get, 0x79ae45, 0xf2db26);
+    public static final RegistryObject<ForgeSpawnEggItem> DANDELION_SPAWN_EGG = HELPER.createSpawnEggItem("dande_lion", WonderEntityTypes.DANDE_LION::get, 0x9ad746, 0xfff13e);
 
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(WorldOfWonder.MOD_ID)

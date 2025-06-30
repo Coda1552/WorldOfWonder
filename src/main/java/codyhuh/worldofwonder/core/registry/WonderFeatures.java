@@ -11,6 +11,7 @@ import net.minecraft.core.Direction;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.worldgen.BootstapContext;
 import net.minecraft.data.worldgen.features.FeatureUtils;
+import net.minecraft.data.worldgen.features.VegetationFeatures;
 import net.minecraft.data.worldgen.placement.PlacementUtils;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -43,12 +44,14 @@ public class WonderFeatures {
     public static final RegistryObject<Feature<TreeConfiguration>> FLUFFY_DANDELION_TREE = FEATURES.register("fluffy_dandelion_tree", () -> new TreeFeature(TreeConfiguration.CODEC));
     public static final RegistryObject<Feature<RandomPatchConfiguration>> DANDELION_PATCH = FEATURES.register("dandelion_patch", () -> new RandomPatchFeature(RandomPatchConfiguration.CODEC));
     public static final RegistryObject<Feature<MellowPatchConfig>> MELLOW_FLOWER_PATCH = FEATURES.register("mellow_flower_patch", () -> new MellowPatchFeature(MellowPatchConfig.CODEC));
+    public static final RegistryObject<Feature<RandomPatchConfiguration>> LILAC_PATCH = FEATURES.register("lilac_patch", () -> new RandomPatchFeature(RandomPatchConfiguration.CODEC));
 
     public static final class WonderConfiguredFeatures {
         public static final ResourceKey<ConfiguredFeature<?, ?>> DANDELION = createKey("dandelion");
         public static final ResourceKey<ConfiguredFeature<?, ?>> DANDELION_FLUFF = createKey("dandelion_fluff");
         public static final ResourceKey<ConfiguredFeature<?, ?>> DANDELION_FLOWERS = createKey("dandelion_flowers");
         public static final ResourceKey<ConfiguredFeature<?, ?>> MELLOW_PETALS = createKey("mellow_petals");
+        public static final ResourceKey<ConfiguredFeature<?, ?>> LILAC = createKey("lilac");
 
         public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
 //            HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
@@ -67,6 +70,8 @@ public class WonderFeatures {
                             new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
             register(context, DANDELION_FLOWERS, WonderFeatures.DANDELION_PATCH.get(),
                     grassPatch(BlockStateProvider.simple(Blocks.DANDELION), 32));
+            register(context, LILAC, WonderFeatures.LILAC_PATCH.get(),
+                    grassPatch(BlockStateProvider.simple(Blocks.LILAC), 32));
 
             SimpleWeightedRandomList.Builder<BlockState> petalsListBuilder = SimpleWeightedRandomList.builder();
 
@@ -100,6 +105,7 @@ public class WonderFeatures {
         public static final ResourceKey<PlacedFeature> PLACED_DANDELION_FLUFF = createKey("placed_dandelion_fluff");
         public static final ResourceKey<PlacedFeature> PLACED_DANDELION_FLOWERS = createKey("placed_dandelion_flowers");
         public static final ResourceKey<PlacedFeature> PLACED_MELLOW_PETALS = createKey("placed_mellow_petals");
+        public static final ResourceKey<PlacedFeature> PLACED_LILAC = createKey("placed_lilac");
 
         public static void bootstrap(BootstapContext<PlacedFeature> context) {
             PlacementModifier placementmodifier = SurfaceWaterDepthFilter.forMaxDepth(0);
@@ -108,6 +114,7 @@ public class WonderFeatures {
             register(context, PLACED_DANDELION_FLUFF, WonderConfiguredFeatures.DANDELION_FLUFF, PlacementUtils.countExtra(1, 0.05F, 1), InSquarePlacement.spread(), placementmodifier, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.OAK_SAPLING.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
             register(context, PLACED_MELLOW_PETALS, WonderConfiguredFeatures.MELLOW_PETALS,
                     RarityFilter.onAverageOnceEvery(2), InSquarePlacement.spread(), PlacementUtils.HEIGHTMAP, BiomeFilter.biome(), BlockPredicateFilter.forPredicate(BlockPredicate.anyOf(BlockPredicate.ONLY_IN_AIR_PREDICATE)));
+            register(context, PLACED_LILAC, WonderConfiguredFeatures.LILAC, PlacementUtils.countExtra(1, 0.05F, 1), InSquarePlacement.spread(), placementmodifier, PlacementUtils.HEIGHTMAP_OCEAN_FLOOR, BlockPredicateFilter.forPredicate(BlockPredicate.wouldSurvive(Blocks.LILAC.defaultBlockState(), BlockPos.ZERO)), BiomeFilter.biome());
         }
 
         public static ResourceKey<PlacedFeature> createKey(String name) {

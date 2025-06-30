@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "worldofwonder:fairy_hut",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 8,
+    "salt": 1235785,
+    "spread_type": "linear"
+  }
+}

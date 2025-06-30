@@ -39,9 +39,11 @@ public class MellowPatchFeature extends Feature<MellowPatchConfig> {
         SimpleBlockConfiguration simpleBlockConfig = (SimpleBlockConfiguration) configuredFeature.config();
 
         for(int l = 0; l < config.tries(); ++l) {
+
             mutablePos.setWithOffset(origin, random.nextInt(j) - random.nextInt(j), random.nextInt(k) - random.nextInt(k), random.nextInt(j) - random.nextInt(j));
             BlockState stateToBe = simpleBlockConfig.toPlace().getState(random, mutablePos);
-            if (!level.getBlockState(mutablePos).canBeReplaced()) {
+
+            if (!level.getFluidState(mutablePos).is(Fluids.EMPTY) || !level.getBlockState(mutablePos).canBeReplaced()) {
                 continue;
             }
             boolean waterborne = level.getFluidState(mutablePos.below()).is(Fluids.WATER);
@@ -50,6 +52,8 @@ public class MellowPatchFeature extends Feature<MellowPatchConfig> {
             if (waterborne) {
                 stateToBe = stateToBe.setValue(MellowPetalsBlock.WATERBORNE, true);
             }
+
+
             if (earthborne || waterborne) {
                 if (level.setBlock(mutablePos, stateToBe, 3)) {
                     ++i;

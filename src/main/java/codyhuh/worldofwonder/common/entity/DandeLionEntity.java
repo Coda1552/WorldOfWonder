@@ -86,7 +86,7 @@ public class DandeLionEntity extends TamableAnimal {
         this.targetSelector.addGoal(1, new OwnerHurtByTargetGoal(this));
         this.targetSelector.addGoal(2, new OwnerHurtTargetGoal(this));
         this.targetSelector.addGoal(3, new HurtByTargetGoal(this).setAlertOthers());
-        this.targetSelector.addGoal(4, new NonTameRandomTargetGoal<>(this, Animal.class, false, entity -> !(entity instanceof DandeLionEntity)));
+        this.targetSelector.addGoal(4, new NonTameRandomTargetGoal<>(this, Animal.class, false, entity -> entity.getBbWidth() <= 0.75F && entity.getBbHeight() <= 0.75F && !(entity instanceof DandeLionEntity)));
     }
 
     public static AttributeSupplier.Builder registerAttributes() {
@@ -330,19 +330,24 @@ public class DandeLionEntity extends TamableAnimal {
     @Nullable
     @Override
     protected SoundEvent getAmbientSound() {
-        return isTame() ? WonderSounds.DANDE_LION_PURR.get() : WonderSounds.DANDE_LION_AMBIENT.get();
+        return isTame() ? SoundEvents.CAT_PURR : SoundEvents.CAT_STRAY_AMBIENT;
     }
 
     @Nullable
     @Override
     protected SoundEvent getDeathSound() {
-        return WonderSounds.DANDE_LION_DEATH.get();
+        return SoundEvents.CAT_DEATH;
     }
 
     @Nullable
     @Override
     protected SoundEvent getHurtSound(DamageSource damageSourceIn) {
-        return WonderSounds.DANDE_LION_HURT.get();
+        return SoundEvents.CAT_HURT;
+    }
+
+    @Override
+    public float getVoicePitch() {
+        return 0.6F;
     }
 
     public boolean isSheared() {

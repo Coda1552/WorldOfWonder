@@ -23,10 +23,7 @@ public class DandeLionRenderer extends MobRenderer<DandeLionEntity, DandeLionMod
 
     @Override
     protected void scale(DandeLionEntity lion, PoseStack stack, float partialTicks) {
-        if (lion.isBaby()) {
-            stack.scale(0.5F, 0.5F, 0.5F);
-            this.shadowRadius = 0.3F;
-        } else {
+        if (!lion.isBaby()) {
             this.shadowRadius = 0.5F;
         }
         if (lion.isInSittingPose()) stack.translate(0, lion.isBaby() ? 0.175 : 0.35, 0);

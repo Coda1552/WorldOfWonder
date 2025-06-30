@@ -32,6 +32,6 @@ public class WonderCompat {
         DataUtil.registerFlammable(WonderBlocks.STRIPPED_STEM_WOOD.get(), 5, 20);
         DataUtil.registerFlammable(WonderBlocks.DANDELION_PETALS.get(), 5, 60);
         DataUtil.registerFlammable(WonderBlocks.DANDELION_FLUFF.get(), 5, 60);
-        DataUtil.registerFlammable(WonderBlocks.STEM_BOOKSHELF.get(), 30, 60);
+        //DataUtil.registerFlammable(WonderBlocks.STEM_BOOKSHELF.get(), 30, 60);
     }
 }

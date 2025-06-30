@@ -1,4 +1,5 @@
 {
+  "render_type": "cutout",
   "textures": {
     "flower": "worldofwonder:block/dande_lion_sprout",
     "particle": "worldofwonder:block/dande_lion_sprout"

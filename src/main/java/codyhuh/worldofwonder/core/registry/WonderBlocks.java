@@ -5,16 +5,12 @@ import codyhuh.worldofwonder.common.block.*;
 import codyhuh.worldofwonder.core.other.WonderProperties;
 import com.mojang.datafixers.util.Pair;
 import com.teamabnormals.blueprint.common.block.LogBlock;
-import com.teamabnormals.blueprint.common.block.chest.BlueprintChestBlock;
-import com.teamabnormals.blueprint.common.block.chest.BlueprintTrappedChestBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintCeilingHangingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintStandingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallHangingSignBlock;
 import com.teamabnormals.blueprint.common.block.sign.BlueprintWallSignBlock;
-import com.teamabnormals.blueprint.core.util.PropertyUtil;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.material.MapColor;
@@ -22,7 +18,6 @@ import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.registries.RegistryObject;
 
 import static net.minecraft.world.item.CreativeModeTabs.*;
-import static net.minecraft.world.item.Items.PINK_PETALS;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 
 @Mod.EventBusSubscriber(modid = WorldOfWonder.MOD_ID, bus = Mod.EventBusSubscriber.Bus.MOD)
@@ -48,11 +43,11 @@ public class WonderBlocks {
     public static final Pair<RegistryObject<BlueprintStandingSignBlock>, RegistryObject<BlueprintWallSignBlock>> STEM_SIGNS = HELPER.createSignBlock("stem", WonderProperties.STEM_WOOD_TYPE, WonderProperties.STEM.sign());
     public static final Pair<RegistryObject<BlueprintCeilingHangingSignBlock>, RegistryObject<BlueprintWallHangingSignBlock>> STEM_HANGING_SIGNS = HELPER.createHangingSignBlock("stem", WonderProperties.STEM_WOOD_TYPE, WonderProperties.STEM.hangingSign());
 
-    public static final RegistryObject<Block> STEM_BOOKSHELF = HELPER.createFuelBlock("stem_bookshelf", () -> new Block(WonderProperties.STEM.bookshelf()), 300);
-    public static final RegistryObject<Block> STEM_LADDER = HELPER.createFuelBlock("stem_ladder", () -> new LadderBlock(WonderProperties.STEM.ladder()), 300);
+    //public static final RegistryObject<Block> STEM_BOOKSHELF = HELPER.createFuelBlock("stem_bookshelf", () -> new Block(WonderProperties.STEM.bookshelf()), 300);
+    //public static final RegistryObject<Block> STEM_LADDER = HELPER.createFuelBlock("stem_ladder", () -> new LadderBlock(WonderProperties.STEM.ladder()), 300);
 
-    public static final RegistryObject<BlueprintChestBlock> STEM_CHEST = HELPER.createChestBlock("stem", WonderProperties.STEM.chest());
-    public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_STEM_CHEST = HELPER.createTrappedChestBlock("stem", WonderProperties.STEM.chest());
+    //public static final RegistryObject<BlueprintChestBlock> STEM_CHEST = HELPER.createChestBlock("stem", WonderProperties.STEM.chest());
+    //public static final RegistryObject<BlueprintTrappedChestBlock> TRAPPED_STEM_CHEST = HELPER.createTrappedChestBlock("stem", WonderProperties.STEM.chest());
 
     public static final RegistryObject<Block> STEM_VERTICAL_SLAB = HELPER.createBlock("stem_vertical_slab", () -> new VerticalSlabBlock(Block.Properties.copy(STEM_SLAB.get())));
 
@@ -78,10 +73,10 @@ public class WonderBlocks {
                                 STEM_STAIRS, STEM_SLAB, STEM_FENCE, STEM_FENCE_GATE, STEM_DOOR, STEM_TRAPDOOR,
                                 STEM_PRESSURE_PLATE, STEM_BUTTON, STEM_SIGNS.getFirst(), STEM_HANGING_SIGNS.getFirst(),
                                 DANDELION_PETALS, DANDELION_FLUFF, MELLOW_PETALS)
-                .tab(FUNCTIONAL_BLOCKS)
-                .addItems(STEM_LADDER, STEM_CHEST)
-                .tab(REDSTONE_BLOCKS)
-                .addItems(TRAPPED_STEM_CHEST)
+                //.tab(FUNCTIONAL_BLOCKS)
+                //.addItems(STEM_LADDER, STEM_CHEST)
+                //.tab(REDSTONE_BLOCKS)
+                //.addItems(TRAPPED_STEM_CHEST)
         ;
     }
 }

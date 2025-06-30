@@ -1,8 +1,0 @@
-{
-    "parent": "block/ladder",
-    "ambientocclusion": false,
-    "textures": {
-        "particle": "worldofwonder:block/stem_ladder",
-        "texture": "worldofwonder:block/stem_ladder"
-    }
-}

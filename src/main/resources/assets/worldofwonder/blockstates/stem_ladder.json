@@ -1,9 +1,0 @@
-
-{
-    "variants": {
-        "facing=north": { "model": "worldofwonder:block/stem_ladder" },
-        "facing=east":  { "model": "worldofwonder:block/stem_ladder", "y": 90 },
-        "facing=south": { "model": "worldofwonder:block/stem_ladder", "y": 180 },
-        "facing=west":  { "model": "worldofwonder:block/stem_ladder", "y": 270 }
-    }
-}

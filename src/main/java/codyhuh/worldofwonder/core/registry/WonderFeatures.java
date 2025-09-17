@@ -18,6 +18,7 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.random.SimpleWeightedRandomList;
 import net.minecraft.util.valueproviders.UniformInt;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.LeavesBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.levelgen.blockpredicates.BlockPredicate;
 import net.minecraft.world.level.levelgen.feature.ConfiguredFeature;
@@ -54,18 +55,18 @@ public class WonderFeatures {
         public static final ResourceKey<ConfiguredFeature<?, ?>> LILAC = createKey("lilac");
 
         public static void bootstrap(BootstapContext<ConfiguredFeature<?, ?>> context) {
-//            HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
+            //HolderGetter<PlacedFeature> placedFeatures = context.lookup(Registries.PLACED_FEATURE);
 
             register(context, DANDELION, WonderFeatures.DANDELION_TREE.get(), new TreeConfiguration.TreeConfigurationBuilder(
                     BlockStateProvider.simple(WonderBlocks.STEM_LOG.get().defaultBlockState()),
                     new StraightTrunkPlacer(4, 2, 0),
-                    BlockStateProvider.simple(WonderBlocks.DANDELION_PETALS.get().defaultBlockState()),
+                    BlockStateProvider.simple(WonderBlocks.DANDELION_PETALS.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 7)),
                     new DandelionFoliagePlacer(UniformInt.of(3, 3), UniformInt.of(0, 0)),
                     new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
             register(context, DANDELION_FLUFF, WonderFeatures.FLUFFY_DANDELION_TREE.get(),
                     new TreeConfiguration.TreeConfigurationBuilder(BlockStateProvider.simple(WonderBlocks.STEM_LOG.get().defaultBlockState()),
                             new StraightTrunkPlacer(6, 2, 0),
-                            BlockStateProvider.simple(WonderBlocks.DANDELION_FLUFF.get().defaultBlockState()),
+                            BlockStateProvider.simple(WonderBlocks.DANDELION_FLUFF.get().defaultBlockState().setValue(LeavesBlock.DISTANCE, 7)),
                             new DandelionFluffFoliagePlacer(UniformInt.of(2, 2), UniformInt.of(0, 0)),
                             new TwoLayersFeatureSize(1, 0, 1)).ignoreVines().build());
             register(context, DANDELION_FLOWERS, WonderFeatures.DANDELION_PATCH.get(),

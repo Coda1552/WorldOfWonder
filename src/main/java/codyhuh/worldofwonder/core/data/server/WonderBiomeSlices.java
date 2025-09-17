@@ -85,7 +85,7 @@ public final class WonderBiomeSlices {
         // Consult https://minecraft.wiki/w/World_generation for specifics!!
         private final ResourceKey<Biome>[][] MIDDLE_BIOMES = new ResourceKey[][]{
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-                {DANDELION_FIELDS_AREA, DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA},
+                {DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}
@@ -103,7 +103,7 @@ public final class WonderBiomeSlices {
 
         private final ResourceKey<Biome>[][] PLATEAU_BIOMES = new ResourceKey[][]{
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-                {DANDELION_FIELDS_AREA, DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA},
+                {DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA}};
@@ -117,7 +117,7 @@ public final class WonderBiomeSlices {
 
         private final ResourceKey<Biome>[][] SHATTERED_BIOMES = new ResourceKey[][]{
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
-                {DANDELION_FIELDS_AREA, DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA},
+                {DANDELION_FIELDS_AREA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {VANILLA, VANILLA, VANILLA, VANILLA, VANILLA},
                 {null, null, null, null, null},
                 {null, null, null, null, null}};

@@ -28,7 +28,12 @@
     "foliage_provider": {
       "type": "minecraft:simple_state_provider",
       "state": {
-        "Name": "worldofwonder:dandelion_petals"
+        "Name": "worldofwonder:dandelion_petals",
+        "Properties": {
+          "distance": "7",
+          "persistent": "false",
+          "waterlogged": "false"
+        }
       }
     },
     "force_dirt": false,

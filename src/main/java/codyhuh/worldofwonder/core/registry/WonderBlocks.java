@@ -29,7 +29,7 @@ public class WonderBlocks {
     public static final RegistryObject<Block> STEM_LOG = HELPER.createBlock("stem_log", () -> new LogBlock(STRIPPED_STEM_LOG, WonderProperties.STEM.log()));
     public static final RegistryObject<Block> STEM_WOOD = HELPER.createBlock("stem_wood", () -> new LogBlock(STRIPPED_STEM_WOOD, WonderProperties.STEM.log()));
     public static final RegistryObject<Block> DANDELION_FLUFF = HELPER.createBlock("dandelion_fluff", DandelionFluffBlock::new, new Item.Properties());
-    public static final RegistryObject<Block> DANDELION_PETALS = HELPER.createBlock("dandelion_petals", () -> new Block(Block.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).sound(SoundType.GRASS)), new Item.Properties());
+    public static final RegistryObject<Block> DANDELION_PETALS = HELPER.createBlock("dandelion_petals", () -> new LeavesBlock(Block.Properties.of().mapColor(MapColor.COLOR_YELLOW).strength(0.2F).sound(SoundType.GRASS)), new Item.Properties());
     public static final RegistryObject<Block> STEM_PLANKS = HELPER.createBlock("stem_planks", () -> new Block(WonderProperties.STEM.planks()));
     public static final RegistryObject<Block> STEM_STAIRS = HELPER.createBlock("stem_stairs", () -> new StairBlock(() -> STEM_PLANKS.get().defaultBlockState(), WonderProperties.STEM.planks()));
     public static final RegistryObject<Block> STEM_SLAB = HELPER.createBlock("stem_slab", () -> new SlabBlock(WonderProperties.STEM.planks()));

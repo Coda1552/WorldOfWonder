@@ -80,7 +80,7 @@ public class DandeLionSproutBlock extends BaseEntityBlock implements IPlantable,
 		return pLevel.isClientSide ? null :  createTickerHelper(pBlockEntityType, WonderBlockEntityTypes.DANDE_LION_SPROUT.get(), DandeLionSproutTileEntity::tick);
 	}
 
-    @org.jetbrains.annotations.Nullable
+    @Nullable
     @Override
     public BlockEntity newBlockEntity(BlockPos pos, BlockState state) {
         return WonderBlockEntityTypes.DANDE_LION_SPROUT.get().create(pos, state);

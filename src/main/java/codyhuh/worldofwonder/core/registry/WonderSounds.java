@@ -13,15 +13,10 @@ import net.minecraftforge.registries.RegistryObject;
 public class WonderSounds {
     public static final SoundSubRegistryHelper HELPER = WorldOfWonder.REGISTRY_HELPER.getSoundSubHelper();
 
-    public static final DeferredRegister<SoundEvent> REGISTRY = DeferredRegister.create(ForgeRegistries.SOUND_EVENTS, WorldOfWonder.MOD_ID);
     public static final RegistryObject<SoundEvent> DANDE_LION_AMBIENT = HELPER.createSoundEvent("entity.dande_lion.ambient");
     public static final RegistryObject<SoundEvent> DANDE_LION_PURR = HELPER.createSoundEvent("entity.dande_lion.purr");
     public static final RegistryObject<SoundEvent> DANDE_LION_HURT = HELPER.createSoundEvent("entity.dande_lion.hurt");
     public static final RegistryObject<SoundEvent> DANDE_LION_DEATH = HELPER.createSoundEvent("entity.dande_lion.death");
 
     public static final RegistryObject<SoundEvent> MUSIC_BIOME_DANDELION_FIELDS = HELPER.createSoundEvent("music.overworld.dandelion_fields");
-
-    private static RegistryObject<SoundEvent> add(String name) {
-        return REGISTRY.register(name, () -> SoundEvent.createVariableRangeEvent(new ResourceLocation(WorldOfWonder.MOD_ID, name)));
-    }
 }

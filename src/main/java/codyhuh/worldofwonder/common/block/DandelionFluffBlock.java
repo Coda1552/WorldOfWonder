@@ -18,6 +18,7 @@ public class DandelionFluffBlock extends LeavesBlock {
         super(Block.Properties.of().strength(0.2f).sound(SoundType.WOOL));
     }
 
+    // todo - fix decaying
     public void randomTick(BlockState state, ServerLevel level, BlockPos pos, RandomSource p_221382_) {
         BlockPos.MutableBlockPos mutable = new BlockPos.MutableBlockPos();
 
